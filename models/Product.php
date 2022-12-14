@@ -14,4 +14,9 @@ class Product
         $this->price = $price;
         $this->category = $category;
     }
+
+    public function getDetails()
+    {
+        return "name: $this->name";
+    }
 }

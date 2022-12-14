@@ -20,7 +20,16 @@ require_once __DIR__ . "/database/database.php";
         <div class="row">
             <?php foreach ($products as $product) { ?>
                 <div class="col">
-
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $product->name ?></h5>
+                            <p class="card-text">€ <?php echo $product->price ?></p>
+                            <p class="card-text"><?php echo $product->getDetails() ?></p>
+                            <?php if (get_class($product) === "Toy") { ?>
+                                <p class="card-text"><?php echo $product->material ?></p>
+                            <?php } ?>
+                        </div>
+                    </div>
                 </div>
             <?php } ?>
         </div>
